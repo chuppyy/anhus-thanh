@@ -82,20 +82,7 @@ export default function Page(data: any) {
           <div id="div_adsconex_banner_responsive_1"></div>
           <h1>{article.name}</h1>
         <div id="adsconex-video-container"></div>
-        <Script 
-        src="https://cdn.adsconex.com/js/adsconex-player.js"
         
-        // strategy="afterInteractive" tương đương với defer (mặc định)
-        // Nó sẽ chạy ngay sau khi trang load xong cơ bản
-        strategy="afterInteractive" 
-
-        // 3. (Quan trọng) Nếu cần gọi hàm khởi tạo sau khi script tải xong
-        onLoad={() => {
-          console.log('Script AdsConex đã tải xong!');
-          // Nếu bên trong script đó có hàm init, gọi nó ở đây sẽ an toàn 100%
-          // Ví dụ: window.AdsConexPlayer.init(); 
-        }}
-      />
           <p className="mb-4 text-lg">Posted: {formatDate(article.dateTimeStart)}</p>
 
           <Suspense fallback={<p>Loading ...</p>}>
@@ -176,6 +163,29 @@ export default function Page(data: any) {
             </>
           )}
         </div>
+        <Script 
+        src="https://cdn.adsconex.com/js/adsconex-player.js" 
+        strategy="afterInteractive" 
+      />
+      <Script 
+        src="https://cdn.adsconex.com/js/adsconex-banner-bw-feji-rl.js" 
+        strategy="afterInteractive" 
+      />
+      {/* <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script> */}
+      
+      <Script 
+        src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+        strategy="afterInteractive"
+      />
+
+      {/* QUAN TRỌNG: GPT thường đi kèm đoạn mã khởi tạo (googletag.cmd.push...).
+         Bạn nên thêm đoạn đó ngay bên dưới dưới dạng inline script như sau:
+      */}
+      <Script id="google-ad-manager-init" strategy="afterInteractive">
+        {`
+          window.googletag = window.googletag || {cmd: []};
+        `}
+      </Script>
       </main>
     </>
   );
