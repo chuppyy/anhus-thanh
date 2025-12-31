@@ -79,29 +79,23 @@ export default function Page(data: any) {
 
       <main>
         <div className="container-flu details">
-          <div className="adsconex-banner" data-ad-placement="banner1" id="ub-banner1"></div>
+          <div id="div_adsconex_banner_responsive_1"></div>
           <h1>{article.name}</h1>
-          {/* Banner FEJI */}
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.unibotshb = window.unibotshb || { cmd: [] };
-            unibotshb.cmd.push(()=>{ ubHB("feji.io_long"); });
-          `
+        <div id="adsconex-video-container"></div>
+        <Script 
+        src="https://cdn.adsconex.com/js/adsconex-player.js"
+        
+        // strategy="afterInteractive" tương đương với defer (mặc định)
+        // Nó sẽ chạy ngay sau khi trang load xong cơ bản
+        strategy="afterInteractive" 
+
+        // 3. (Quan trọng) Nếu cần gọi hàm khởi tạo sau khi script tải xong
+        onLoad={() => {
+          console.log('Script AdsConex đã tải xong!');
+          // Nếu bên trong script đó có hàm init, gọi nó ở đây sẽ an toàn 100%
+          // Ví dụ: window.AdsConexPlayer.init(); 
         }}
       />
-      
-      {/* Video Player FEJI */}
-      <div id="div-ub-feji.io_1723454353847">
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.unibots = window.unibots || { cmd: [] };
-              unibots.cmd.push(function() { unibotsPlayer("feji.io_1723454353847") });
-            `
-          }}
-        />
-      </div>
           <p className="mb-4 text-lg">Posted: {formatDate(article.dateTimeStart)}</p>
 
           <Suspense fallback={<p>Loading ...</p>}>
