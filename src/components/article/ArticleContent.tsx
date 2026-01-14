@@ -37,6 +37,19 @@ const normalizeHtmlContent = (html: string): string => {
   );
 };
 
+/**
+ * Ad Container component that prevents React from overwriting ad content
+ */
+const AdContainer = memo(function AdContainer({ id }: { id: string }) {
+  return (
+    <div
+      id={id}
+      suppressHydrationWarning
+      dangerouslySetInnerHTML={{ __html: "" }}
+    />
+  );
+});
+
 export const ArticleContent = memo(function ArticleContent({
   title,
   datePosted,
@@ -49,13 +62,16 @@ export const ArticleContent = memo(function ArticleContent({
 
   return (
     <>
-      <div id="div_adsconex_banner_responsive_1"></div>
+      {/* Ad container - suppressHydrationWarning prevents React from overwriting */}
+      <AdContainer id="div_adsconex_banner_responsive_1" />
+
       {/* Article Title */}
       <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
         {title}
       </h1>
 
-      <div id="adsconex-video-container"></div>
+      {/* Video Ad container */}
+      <AdContainer id="adsconex-video-container" />
 
       {/* Posted Date */}
       <p className="mb-10 text-gray-500 text-lg">
@@ -80,3 +96,4 @@ declare global {
     unibotsPlayer?: (id: string) => void;
   }
 }
+
