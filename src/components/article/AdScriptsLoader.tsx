@@ -17,7 +17,6 @@ export const AdScriptsLoader = () => {
             if (document.querySelector(`script[src="${src}"]`)) {
                 return;
             }
-
             const script = document.createElement("script");
             script.src = src;
             if (options.defer) script.defer = true;
