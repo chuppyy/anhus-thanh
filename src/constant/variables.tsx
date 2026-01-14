@@ -95,14 +95,14 @@ export const SCRIPTS = {
 
   adsconexPlayerScript: (
     <Script
-      defer
+
       src="https://cdn.adsconex.com/js/adsconex-player.js"
       strategy="afterInteractive"
     />
   ),
   adsconexBannerScript: (
     <Script
-      defer
+
       src="https://cdn.adsconex.com/js/adsconex-banner-bw-feji-rl.js"
       strategy="afterInteractive"
     />
