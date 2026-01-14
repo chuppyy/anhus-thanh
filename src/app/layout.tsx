@@ -41,11 +41,21 @@ export default function RootLayout({
         {/* DNS Prefetch for external domains */}
         <link rel="dns-prefetch" href="https://cdn.taboola.com" />
         <link rel="dns-prefetch" href="https://adsconex.com" />
+        <link rel="dns-prefetch" href="https://cdn.adsconex.com" />
+        <link rel="dns-prefetch" href="https://securepubads.g.doubleclick.net" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
         {/* Preconnect to external domains for faster loading */}
         <link rel="preconnect" href="https://cdn.taboola.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://cdn.adsconex.com" crossOrigin="anonymous" />
         <link rel="preconnect" href={VARIABLES.appApi} crossOrigin="anonymous" />
+
+        {/* VIDEO - adsconex-player.js (defer) in head */}
+        {SCRIPTS.adsconexPlayerScript}
+
+        {/* BANNER - gpt.js (async) + adsconex-banner (defer) in head */}
+        {SCRIPTS.googleAdManagerScript}
+        {SCRIPTS.adsconexBannerScript}
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
@@ -55,11 +65,6 @@ export default function RootLayout({
 
         {/* Metaconex tag (gtag.js) - deferred */}
         {SCRIPTS.metaconexScript}
-
-        {/* Ad Scripts - beforeInteractive for direct HTML injection */}
-        {SCRIPTS.adsconexPlayerScript}
-        {SCRIPTS.googleAdManagerScript}
-        {SCRIPTS.adsconexBannerScript}
 
         <header>
           <Navbar />
