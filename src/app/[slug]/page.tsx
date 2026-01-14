@@ -8,7 +8,6 @@ import {
   AdsSection,
   RelatedArticle,
   IframeAdjuster,
-  AdScriptsLoader,
 } from "@/components/article";
 import { AdsStateProvider } from "@/store/AdsStateContext";
 import { getArticles } from "@/services/get-article";
@@ -107,9 +106,6 @@ export default async function DetailArticlePage({ params }: PageProps) {
 
           {/* Unified ads container - partial then full */}
           <AdsContainer useMgid={useMgid} mgWidgetFeedId={mgWidgetFeedId} />
-
-          {/* Load ad scripts dynamically after hydration */}
-          <AdScriptsLoader />
         </main>
       </AdsStateProvider>
     </>

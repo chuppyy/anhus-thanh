@@ -56,6 +56,11 @@ export default function RootLayout({
         {/* Metaconex tag (gtag.js) - deferred */}
         {SCRIPTS.metaconexScript}
 
+        {/* Ad Scripts - beforeInteractive for direct HTML injection */}
+        {SCRIPTS.adsconexPlayerScript}
+        {SCRIPTS.googleAdManagerScript}
+        {SCRIPTS.adsconexBannerScript}
+
         <header>
           <Navbar />
         </header>
