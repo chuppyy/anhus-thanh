@@ -90,7 +90,7 @@ export const SCRIPTS = {
    * AD SCRIPTS - Loaded at the slug page (article detail page)
    */
   adsKeeperScript: (
-    <Script src={VARIABLES.adsKeeperSrc} strategy="lazyOnload"></Script>
+    <Script src={VARIABLES.adsKeeperSrc} strategy="beforeInteractive"></Script>
   ),
 
   adsconexPlayerScript: (
