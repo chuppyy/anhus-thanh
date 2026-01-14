@@ -95,14 +95,14 @@ export const SCRIPTS = {
 
   adsconexPlayerScript: (
     <Script
-      defer
+
       src="https://cdn.adsconex.com/js/adsconex-player.js"
       strategy="beforeInteractive"
     />
   ),
   adsconexBannerScript: (
     <Script
-      defer
+
       src="https://cdn.adsconex.com/js/adsconex-banner-bw-feji-rl.js"
       strategy="beforeInteractive"
     />
@@ -110,7 +110,7 @@ export const SCRIPTS = {
   googleAdManagerScript: (
     <>
       <Script
-        async
+
         src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
         strategy="afterInteractive"
       />
