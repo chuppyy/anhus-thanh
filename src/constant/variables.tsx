@@ -61,7 +61,7 @@ export const SCRIPTS = {
       defer
       src="https://adsconex.com/js/config.js"
       data-config="all"
-      strategy="afterInteractive"
+      strategy="beforeInteractive"
     ></Script>
   ),
 
