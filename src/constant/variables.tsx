@@ -90,21 +90,21 @@ export const SCRIPTS = {
    * AD SCRIPTS - Loaded at the slug page (article detail page)
    */
   adsKeeperScript: (
-    <Script src={VARIABLES.adsKeeperSrc} strategy="beforeInteractive"></Script>
+    <Script src={VARIABLES.adsKeeperSrc} strategy="afterInteractive"></Script>
   ),
 
   adsconexPlayerScript: (
     <Script
-
+      defer
       src="https://cdn.adsconex.com/js/adsconex-player.js"
-      strategy="beforeInteractive"
+      strategy="afterInteractive"
     />
   ),
   adsconexBannerScript: (
     <Script
-
+      defer
       src="https://cdn.adsconex.com/js/adsconex-banner-bw-feji-rl.js"
-      strategy="beforeInteractive"
+      strategy="afterInteractive"
     />
   ),
   googleAdManagerScript: (
