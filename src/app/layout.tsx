@@ -50,12 +50,6 @@ export default function RootLayout({
         <link rel="preconnect" href="https://cdn.adsconex.com" crossOrigin="anonymous" />
         <link rel="preconnect" href={VARIABLES.appApi} crossOrigin="anonymous" />
 
-        {/* VIDEO - adsconex-player.js (defer) in head */}
-        {SCRIPTS.adsconexPlayerScript}
-
-        {/* BANNER - gpt.js (async) + adsconex-banner (defer) in head */}
-        {SCRIPTS.googleAdManagerScript}
-        {SCRIPTS.adsconexBannerScript}
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
@@ -73,6 +67,11 @@ export default function RootLayout({
         <main className="grow">{children}</main>
 
         <Footer />
+
+        {/* Ad Scripts - afterInteractive to load AFTER React renders containers */}
+        {SCRIPTS.adsconexPlayerScript}
+        {SCRIPTS.googleAdManagerScript}
+        {SCRIPTS.adsconexBannerScript}
       </body>
     </html>
   );
