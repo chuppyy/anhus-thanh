@@ -4,7 +4,7 @@
  * Thay đổi domain API tại đây - CHỈ 1 CHỖ DUY NHẤT!
  * Change API domain here - ONLY ONE PLACE!
  */
-export const API_BASE_URL = "https://apisporttestt.vbonews.com";
+export const API_BASE_URL = "https://apisporttest.vbonews.com";
 
 /**
  * Backup URL for fallback when API fails or returns empty data
