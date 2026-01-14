@@ -84,12 +84,9 @@ export default async function DetailArticlePage({ params }: PageProps) {
 
   return (
     <>
-      {/* Load all scripts at the top */}
+      {/* Load essential scripts at the top */}
       {SCRIPTS.adsKeeperScript}
       {SCRIPTS.googleAnalyticsScript}
-      {SCRIPTS.adsconexPlayerScript}
-      {SCRIPTS.adsconexBannerScript}
-      {SCRIPTS.googleAdManagerScript}
 
       <IframeAdjuster />
 
@@ -109,6 +106,11 @@ export default async function DetailArticlePage({ params }: PageProps) {
 
           {/* Unified ads container - partial then full */}
           <AdsContainer useMgid={useMgid} mgWidgetFeedId={mgWidgetFeedId} />
+
+          {/* Ad scripts loaded at end of main */}
+          {SCRIPTS.adsconexPlayerScript}
+          {SCRIPTS.googleAdManagerScript}
+          {SCRIPTS.adsconexBannerScript}
         </main>
       </AdsStateProvider>
     </>
