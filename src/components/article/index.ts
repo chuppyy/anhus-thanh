@@ -4,3 +4,4 @@ export * from "./AdsSection";
 export * from "./RelatedArticle";
 export * from "./AdsContainer";
 export * from "./IframeAdjuster";
+export * from "./AdScriptsLoader";
