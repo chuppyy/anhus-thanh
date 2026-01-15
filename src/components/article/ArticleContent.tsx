@@ -79,7 +79,8 @@ export const ArticleContent = memo(function ArticleContent({
       </p>
 
       <article
-        className="prose prose-xl max-w-none prose-p:text-lg prose-p:leading-relaxed prose-p:mb-6 prose-p:text-justify prose-img:my-10 prose-img:rounded-lg prose-headings:mt-10 prose-headings:mb-6"
+        className="prose prose-xl max-w-none prose-p:leading-relaxed prose-p:mb-6 prose-p:text-justify prose-img:my-10 prose-img:rounded-lg prose-headings:mt-10 prose-headings:mb-6"
+        style={{ fontSize: "24px" }}
         dangerouslySetInnerHTML={{ __html: normalizedContent }}
         suppressHydrationWarning
       />
